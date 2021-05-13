@@ -4,7 +4,7 @@ form.addEventListener("submit", validate);
 const name = document.querySelector("input#name");
 const subject = document.querySelector("input#subject");
 const email = document.querySelector("input#email");
-const message = document.querySelector("input#message");
+const message = document.querySelector("textarea#message");
 
 const nameMsg = document.querySelector(".namesTxt");
 const subjectMsg = document.querySelector(".subjectTxt");
@@ -31,6 +31,7 @@ function validate(r){
       if (!emailTest.test(emailSub)) {
         emailMsg.innerHTML += "This is not a valid E-mail address";
       }
+    //validate Subject
     let subjectSub = subject.value.trim();
     console.log("Subject: " + subjectSub);
     subjectMsg.innerHTML = "";
@@ -39,7 +40,7 @@ function validate(r){
 }
     // validate message
       let messageSub = message.value.trim();
-    console.log("Address: " + messageSub);
+    console.log("Message: " + messageSub);
     messageMsg.innerHTML = "";
     if (messageSub.length < 25) {
         messageMsg.innerHTML += "Must be at least 25 characters!"

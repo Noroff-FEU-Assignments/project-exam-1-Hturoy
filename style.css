@@ -76,4 +76,39 @@ footer {
     background-color: rgb(255, 255, 255);
 }
 
+/*Contactform design*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.formDiv {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+}
+
+input {
+    border-radius: 5px;
+    height: 27px;
+}
+
+input#message {
+    height: 100px;
+}
+
+input.submitbutton {
+    width: 150px;
+    height: 30px;
+}
+
+.contacth1{
+    padding-bottom: 30px;
+}
+
 
