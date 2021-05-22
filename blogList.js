@@ -7,6 +7,8 @@ const blogPosts = document.querySelector(".blogPosts")
 const seMer = document.querySelector(".seMer")
 
 
+
+
 listPosts = (posts) => {
     
     for (let i of posts) { 
@@ -18,7 +20,7 @@ listPosts = (posts) => {
         <div class="blogContainerPost">
             <h2>${i.title.rendered}</h2>
             <img class="postImg" src="${i._embedded["wp:featuredmedia"][0].source_url}"></img>
-            <a href="#"> <p>Les mer</p> </a>
+            <a href="blogPost.html?id=${i.id}"> Les mer </a>
              
             
         </div>
@@ -32,21 +34,25 @@ listPosts = (posts) => {
 
 
 
-fetch(url)
+fetch(url, {
+	"method": "GET",
+})
 .then(response => response.json())
 .then(data => listPosts(data))
 .catch(error => {
   console.error(error.message);
-  thediv.innerHTML = `<div class="error">Does not work</div>`;    
+  blogPosts.innerHTML = `<div class="error">Does not work</div>`;    
 })
 
 
 
 seMer.addEventListener("click", function(){
-    fetch(url2)
+    fetch(url2, {
+        "method": "GET",
+    })
     .then(response => response.json())
     .then(data => listPosts(data))
     .catch(error => {
       console.error(error.message);
-      thediv.innerHTML = `<div class="error">Does not work</div>`;    
+      blogPosts.innerHTML = `<div class="error">Does not work</div>`;    
     })})
