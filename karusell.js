@@ -1,14 +1,49 @@
 const url = "https://henrikturoy.no/wp-json/wp/v2/posts?_embed=true&per_page=8"
 const karusellSlide = document.querySelector(".karusellSlide");
-const karusellBilde = document.querySelectorAll(".karusellBilde")
+const karusellContainer = document.querySelector(".karusellContainer")
 
-// Få tak i innhold
+
+
+
+
+// teller
+let counter = 0;
+const størrelse =  karusellContainer.clientWidth
+console.log(størrelse)
+
+
+// knapper
+const prv = document.querySelector(".prv")
+const nxt = document.querySelector(".nxt")
+
+
+
+
+// karusellSlide.style.transform = `translateX(` + (-størrelse * counter) + `px)`;
+
+// knapplisten
+
+nxt.addEventListener(`click`,()=>{
+    karusellSlide.style.transition = "transform 0.3s ease-in-out";
+    counter++;
+    karusellSlide.style.transform = `translateX(` + (-størrelse * counter) + `px)`;
+    console.log(counter)
+    });
+
+prv.addEventListener(`click`,()=>{
+    karusellSlide.style.transition = "transform 0.3s ease-in-out";
+    counter--;
+    karusellSlide.style.transform = `translateX(` + (-størrelse * counter) + `px)`;
+    console.log(counter)
+    });
+
+
+
+
+    // Få tak i innhold
 listPosts = (posts) => {
     
     for (let i of posts) { 
-        // if(i === posts[8]){
-        //     break
-        // }
         console.log(i)
         let newContent = `
         <div class="slidePost">
@@ -30,38 +65,5 @@ fetch(url, {
 .then(data => listPosts(data))
 .catch(error => {
   console.error(error.message);
-  blogPosts.innerHTML = `<div class="error">Does not work</div>`;    
+  karusellSlide.innerHTML = `<div class="error">Does not work</div>`;    
 })
-
-
-
-
-
-
-
-// knapper
-const forrige = document.querySelector(".forrige")
-const neste = document.querySelector(".neste")
-
-// teller
-let counter = 1;
-const størrelse = karusellSlide.clientWidth
-
-
-karusellSlide.style.transform = "translateX" + (-størrelse * counter) + "px"
-
-// knapplisten
-
-neste.addEventListener(`click`,()=>{
-    karusellSlide.style.transition = "transform 0.5s ease-in-out";
-    counter++;
-    karusellSlide.style.transform = "translateX" + (-størrelse * counter) + "px"
-    console.log(counter)
-    });
-
-forrige.addEventListener(`click`,()=>{
-    karusellSlide.style.transition = "transform 0.5s ease-in-out";
-    counter--;
-    karusellSlide.style.transform = "translateX" + (-størrelse * counter) + "px"
-    console.log(counter)
-    });
