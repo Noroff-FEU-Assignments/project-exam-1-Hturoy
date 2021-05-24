@@ -24,6 +24,10 @@ const nxt = document.querySelector(".nxt")
 // knapplisten
 
 nxt.addEventListener(`click`,()=>{
+    if(counter >= 7){
+        counter=-1
+        karusellSlide.style.transform = `transtaleX(0px)`
+    }
     karusellSlide.style.transition = "transform 0.3s ease-in-out";
     counter++;
     karusellSlide.style.transform = `translateX(` + (-størrelse * counter) + `px)`;
@@ -31,11 +35,15 @@ nxt.addEventListener(`click`,()=>{
     });
 
 prv.addEventListener(`click`,()=>{
+    if(counter <= 0){
+        counter=8
+    }
     karusellSlide.style.transition = "transform 0.3s ease-in-out";
     counter--;
     karusellSlide.style.transform = `translateX(` + (-størrelse * counter) + `px)`;
     console.log(counter)
     });
+
 
 
 
