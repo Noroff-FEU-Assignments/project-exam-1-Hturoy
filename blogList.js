@@ -1,7 +1,7 @@
 console.log("test")
 
-const url = "https://henrikturoy.no/wp-json/wp/v2/posts?_embed=true&per_page=8"
-const url2 = "https://henrikturoy.no/wp-json/wp/v2/posts?_embed=true&per_page=4&offset=8"
+const url = "https://henrikturoy.no/wp-json/wp/v2/posts?_embed=true&per_page=10"
+const url2 = "https://henrikturoy.no/wp-json/wp/v2/posts?_embed=true&per_page=2&offset=10"
 
 const blogPosts = document.querySelector(".blogPosts")
 const seMer = document.querySelector(".seMer")
@@ -46,7 +46,7 @@ fetch(url, {
 
 
 
-seMer.addEventListener("click", function(){
+seMer.addEventListener("click", function(){ seMer.style.display = "none";
     fetch(url2, {
         "method": "GET",
     })

@@ -6,20 +6,20 @@ const url = `https://henrikturoy.no/wp-json/wp/v2/posts/${id}?_embed=true`
 const postContent = document.querySelector(".postContent")
 
 
-
  listPost = (post) => {
-for (let i of post) { 
 
-    console.log(i)
+
+    console.log(post)
     let newContent = `
     
-        <h2>${i.title.rendered}</h2>
-        <p> ${i.content.rendered}</p>  
+        <h2>${post.title.rendered}</h2>
+        <img class="postImg" src="${post._embedded["wp:featuredmedia"][0].source_url}"></img>
+        <p> ${post.content.rendered}</p>  
    
     `
     postContent.innerHTML += newContent;
     
-}}
+}
 
 fetch(url, {
 	"method": "GET",
