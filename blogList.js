@@ -20,7 +20,7 @@ listPosts = (posts) => {
         <div class="blogContainerPost">
             <h2>${i.title.rendered}</h2>
             <img class="postImg" src="${i._embedded["wp:featuredmedia"][0].source_url}"></img>
-            <a href="blogPost.html?id=${i.id}"> Les mer </a>
+            <a href="blogPost.html?id=${i.id}" class="lesMer" > Les mer </a>
              
             
         </div>
