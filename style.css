@@ -6,6 +6,10 @@
     font-family: 'KoHo', sans-serif;
 }
 
+textarea{
+    border-radius: 10px;
+}
+
 /* .body {
     background-color: #03899F;
 } */
@@ -123,6 +127,7 @@ footer {
 
 .hh1 {
     margin: 30px;
+    font-family: 'Barrio', cursive;
 }
 
 .homeContainerX {
