@@ -393,19 +393,38 @@ textarea {
     height: 100%;
 }
 
+.modalBilde {
+    max-width: 1200px;
+}
 
 
 
-@media screen and (min-width: 1000px) {
+
+
+
+@media screen and (min-width: 1024px) {
 
     .burgerIkon {
         display: none;
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
 
     .linkerDesktop {
         display: none;
+    }
+
+    .modalBilde{
+        max-width: 600px;
+    }
+
+  
+}
+
+@media screen and (max-width: 600px){
+
+    .modalBilde{
+        max-width: 350px;
     }
 }
