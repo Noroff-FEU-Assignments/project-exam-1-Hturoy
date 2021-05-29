@@ -18,7 +18,7 @@ const spacer = document.querySelector(".spacer2")
 
  listPost = (post) => {
 
-
+    document.title = `Sjødyrbloggen | ${post.title.rendered}`
     console.log(post)
     let newContent = `
     
@@ -27,12 +27,12 @@ const spacer = document.querySelector(".spacer2")
    
     `
     let imgContent = `
-    <img onClick = "modalImg()" class="postImg" src="${post._embedded["wp:featuredmedia"][0].source_url}"></img>
+    <img onClick = "modalImg()" class="postImg" src="${post._embedded["wp:featuredmedia"][0].source_url}"alt = "${post._embedded["wp:featuredmedia"][0].alt_text}"></img>
     `
     postContent.innerHTML += newContent;
     postImg.innerHTML += imgContent;
 
-    modal.innerHTML = `<img class = "modalBilde" src="${post._embedded["wp:featuredmedia"][0].source_url}"></img>`
+    modal.innerHTML = `<img class = "modalBilde" src="${post._embedded["wp:featuredmedia"][0].source_url}""alt = "${post._embedded["wp:featuredmedia"][0].alt_text}"></img>`
 
 }
 

@@ -19,7 +19,7 @@ listPosts = (posts) => {
         let newContent = `
         <div class="blogContainerPost">
             <h2>${i.title.rendered}</h2>
-            <img class="postImg" src="${i._embedded["wp:featuredmedia"][0].source_url}"></img>
+            <img class="postImg" src="${i._embedded["wp:featuredmedia"][0].source_url}" "alt = "${i._embedded["wp:featuredmedia"][0].alt_text}"></img>
             <a href="blogPost.html?id=${i.id}" class="lesMer" > Les mer </a>
              
             
@@ -30,7 +30,6 @@ listPosts = (posts) => {
 }
 
 
-// <p> ${i.content.rendered}</p>
 
 
 
