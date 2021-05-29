@@ -71,8 +71,8 @@ header {
 footer {
     height: 50px;
     width: 100%;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -373,6 +373,26 @@ textarea {
     text-align: center;
     margin: 30px;
 }
+
+/* Modal */
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.671);
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalBig {
+    overflow: hidden;
+    height: 100%;
+}
+
 
 
 

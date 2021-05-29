@@ -6,7 +6,14 @@ const url = `https://henrikturoy.no/wp-json/wp/v2/posts/${id}?_embed=true`
 const postContent = document.querySelector(".postContent")
 const postImg = document.querySelector(".popOut")
 const postImgOpen =  document.querySelector(".postImgOpen")
+
 const body = document.querySelector(".bodyx")
+const modal = document.querySelector(".modal")
+
+const footer = document.querySelector("footer")
+const spacer = document.querySelector(".spacer2")
+
+
 
 
  listPost = (post) => {
@@ -20,22 +27,30 @@ const body = document.querySelector(".bodyx")
    
     `
     let imgContent = `
-    <img class="postImg" src="${post._embedded["wp:featuredmedia"][0].source_url}"></img>
+    <img onClick = "modalImg()" class="postImg" src="${post._embedded["wp:featuredmedia"][0].source_url}"></img>
     `
     postContent.innerHTML += newContent;
     postImg.innerHTML += imgContent;
 
-    postImg.addEventListener("click", function(){
-      postImg.classList.toggle("postImgOpen")
-    })
+    modal.innerHTML = `<img class = "modalBilde" src="${post._embedded["wp:featuredmedia"][0].source_url}"></img>`
 
-
-    // window.onclick = function(event){
-    //   if (event.target == postImg){
-    //     postImg.style.display = "none"
-    //   }
-    // }
 }
+
+const modalImg = ()=> {
+  const modalImgc = document.querySelector(".postImg")
+  modal.style.display = "flex"
+  body.classList.add(".modalBig")
+  document.documentElement.scrollTop = "0";
+  footer.style.display = "none"
+  spacer.style.display = "none"
+}
+
+modal.addEventListener("click", ()=>{
+  modal.style.display = "none"
+  body.classList.remove(".modalBig")
+  footer.style.display = "flex"
+  spacer.style.display = "flex"
+})
 
 fetch(url, {
 	"method": "GET",
@@ -46,5 +61,7 @@ fetch(url, {
   console.error(error.message);
   postContent.innerHTML = `<div class="error">Does not work</div>`;    
 })
+
+
 
 
