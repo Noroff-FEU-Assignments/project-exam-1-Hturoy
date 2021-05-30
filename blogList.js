@@ -12,9 +12,6 @@ const seMer = document.querySelector(".seMer")
 listPosts = (posts) => {
     
     for (let i of posts) { 
-        // if(i === posts[8]){
-        //     break
-        // }
         console.log(i)
         let newContent = `
         <div class="blogContainerPost">

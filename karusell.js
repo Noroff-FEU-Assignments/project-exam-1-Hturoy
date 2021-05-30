@@ -19,7 +19,6 @@ const nxt = document.querySelector(".nxt")
 
 
 
-// karusellSlide.style.transform = `translateX(` + (-størrelse * counter) + `px)`;
 
 // knapplisten
 
