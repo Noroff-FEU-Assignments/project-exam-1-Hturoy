@@ -220,6 +220,26 @@ textarea {
     resize: none;
 }
 
+.namesTxt {
+    color: red;
+}
+
+.emailTxt {
+    color: red;
+}
+
+.subjectTxt {
+    color: red;
+}
+
+.messageTxt {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
 
 /* ABOUT PAGE */
 

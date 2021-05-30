@@ -10,6 +10,7 @@ const nameMsg = document.querySelector(".namesTxt");
 const subjectMsg = document.querySelector(".subjectTxt");
 const emailMsg = document.querySelector(".emailTxt");
 const messageMsg = document.querySelector(".messageTxt");
+const success = document.querySelector(".success")
 
 function validate(r){
 
@@ -44,6 +45,10 @@ function validate(r){
     messageMsg.innerHTML = "";
     if (messageSub.length < 25) {
         messageMsg.innerHTML += "Du må ha minst 25 karakterer"
+    }
+
+    if(nameMsg.innerHTML === "" && emailMsg.innerHTML === "" && subjectMsg.innerHTML === ""&& messageMsg.innerHTML === "") {
+      success.innerHTML += "Melding sendt!"
     }
     }
 
